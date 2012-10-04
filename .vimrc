@@ -60,6 +60,11 @@ map <C-K> <C-W><S-W>
 vnoremap < <gv
 vnoremap > >gv
 
+" Wrap words in double quotes, parentheses, single quotes
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>el
+nnoremap <leader>) viw<esc>a)<esc>bi(<esc>el
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
+
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
 
