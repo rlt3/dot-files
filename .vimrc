@@ -1,5 +1,8 @@
 set nocompatible                 "  Give vim fully fledged features not compatible with vi
 
+set encoding=utf8
+set ffs=unix,dos
+
 filetype plugin indent on
 
 let NERDTreeQuitOnOpen = 1
@@ -9,7 +12,7 @@ syntax enable
 filetype plugin indent on
 set modelines=5
 
-set number                       "  Show lines numbers
+set relativenumber               "  Shows relative line numbers
 set ruler                        "  Shows row, column
 set showcmd                      "  Show the command you're typing
 set showmode                     "  Show the mode you're in
@@ -20,20 +23,24 @@ set wildmode=list:longest        "  Completes files like a shell
 set incsearch                    "  Highlights matches as you search
 set hlsearch                     "  Highlight matches
 set title                        "  Set the terminal's title
-set tabstop=3                    "  Global tab width.
-set shiftwidth=3                 "  And again, related.
+set tabstop=2                    "  Global tab width.
+set shiftwidth=2                 "  And again, related.
 set expandtab                    "  Use spaces instead of tabs
 set smarttab
 set ai                           "  Auto indent
 set visualbell                   "  Stop the audible bell
 set autoindent                   "  Auto indent
 
+" Color at column 80 so I don't try and write stuff past then
+highlight ColorColumn ctermbg=DarkCyan guibg=Orange
+set colorcolumn=80
+
 " Set Insert Mode, Visual Mode, and Normal mode line colors
 :au VimEnter * hi Visual ctermbg=DarkGray ctermfg=White
 :au InsertEnter * hi CursorLine   cterm=NONE ctermbg=Red ctermfg=white
 :au InsertLeave * hi CursorLine   cterm=NONE ctermbg=DarkCyan ctermfg=Black
 :au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-:au VimEnter,WinEnter,BufWinEnter * hi CursorLine   cterm=NONE ctermbg=DarkCyan ctermfg=Black
+:au VimEnter,WinEnter,BufWinEnter * hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=Black
 :au WinLeave * set nocursorline
 
 nnoremap <F3> :set hlsearch!<CR>
@@ -49,8 +56,12 @@ inoremap <S-Tab> <C-N>
 set grepprg=grep\ -nH\ $*
 
 " Always show line numbers, but only in current window.
-:au WinEnter * :setlocal number
-:au WinLeave * :setlocal nonumber
+:au BufWinEnter * :setlocal relativenumber
+:au BufWinLeave * :setlocal norelativenumber
+
+" Absolute Line Numbers in Insert Mode
+:au InsertEnter * :setlocal number
+:au InsertLeave * :setlocal relativenumber
 
 " Move between splits with Ctrl+j, Ctrl+k
 map <C-J> <C-W><C-W>
@@ -70,6 +81,23 @@ noremap <F1> <Esc>
 
 " Open NERD Tree with F2
 map <F2> :NERDTreeToggle<CR>
+
+" Wrap visual selection in an HTML tag.
+vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
+function! VisualHTMLTagWrap()
+  let tag = input("Tag to wrap block: ")
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe "normal i</".tag.">"
+    else
+      exe "normal a</".tag.">"
+    endif
+    normal `<
+    exe "normal i<".tag.">"
+    normal `<
+  endif
+endfunction
 
 let g:zenburn_high_Contrast=1
 colors zenburn
