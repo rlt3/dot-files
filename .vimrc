@@ -23,8 +23,8 @@ set wildmode=list:longest        "  Completes files like a shell
 set incsearch                    "  Highlights matches as you search
 set hlsearch                     "  Highlight matches
 set title                        "  Set the terminal's title
-set tabstop=2                    "  Global tab width.
-set shiftwidth=2                 "  And again, related.
+set tabstop=4                    "  Global tab width.
+set shiftwidth=4                 "  And again, related.
 set expandtab                    "  Use spaces instead of tabs
 set smarttab
 set ai                           "  Auto indent
@@ -79,9 +79,6 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
 
-" Open NERD Tree with F2
-map <F2> :NERDTreeToggle<CR>
-
 " Wrap visual selection in an HTML tag.
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
 function! VisualHTMLTagWrap()
@@ -98,6 +95,12 @@ function! VisualHTMLTagWrap()
     normal `<
   endif
 endfunction
+
+" Set text files to the txt filetype
+au BufRead,BufNewFile *.txt set filetype=txt
+
+" Set word wrapping and text width automatically in txt files
+autocmd Filetype txt setlocal textwidth=80 formatoptions=t1
 
 let g:zenburn_high_Contrast=1
 colors zenburn
