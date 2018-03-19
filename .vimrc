@@ -5,7 +5,6 @@ set ffs=unix,dos
 
 filetype plugin indent on
 
-let NERDTreeQuitOnOpen = 1
 let &t_Co=256
 
 syntax enable
