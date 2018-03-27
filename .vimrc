@@ -5,6 +5,7 @@ set ffs=unix,dos
 
 filetype plugin indent on
 
+let NERDTreeQuitOnOpen = 1
 let &t_Co=256
 
 syntax enable
@@ -75,8 +76,14 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>el
 nnoremap <leader>) viw<esc>a)<esc>bi(<esc>el
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
 
+" Calls make to compile. If any errors, they are shown in the QuickFix Window
+nnoremap <leader>m :silent make!\|redraw!\|cw<CR>
+
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
+
+" Open NERD Tree with F2
+"map <F2> :NERDTreeToggle<CR>
 
 " Wrap visual selection in an HTML tag.
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
