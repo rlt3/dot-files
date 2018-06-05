@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock screen on sleep
+Before=sleep.target
+
+[Service]
+User=leroy
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -e -c 000000 -i /home/leroy/Pictures/Lock.png
+
+[Install]
+WantedBy=sleep.target

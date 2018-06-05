@@ -1,0 +1,16 @@
+! allow transparent background
+urxvt*depth: 32
+! The background color can either be in this format:
+! urxvt*background: rgba:0000/0000/0200/c800
+! or use the typical hex format prepended with [%transparency]
+urxvt*background: [90]#000000
+! font color
+urxvt*foreground: white
+urxvt*scrollBar: false
+urxvt*font: xft:Inconsolata:size=12:antialias=true:hinting=true
+! get rid of extra spacing between letters/characters
+urxvt*letterSpace: -1
+urxvt*lineSpace: -1
+! Remove border padding so text can take up full height/width of window
+urxvt*internalBorder: 0
+urxvt*externalBorder: 0

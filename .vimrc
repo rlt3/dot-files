@@ -5,6 +5,7 @@ set ffs=unix,dos
 
 filetype plugin indent on
 
+let NERDTreeQuitOnOpen = 1
 let &t_Co=256
 
 syntax enable
@@ -78,6 +79,9 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
 
+" Open NERD Tree with F2
+"map <F2> :NERDTreeToggle<CR>
+
 " Wrap visual selection in an HTML tag.
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
 function! VisualHTMLTagWrap()
@@ -97,9 +101,11 @@ endfunction
 
 " Set text files to the txt filetype
 au BufRead,BufNewFile *.txt set filetype=txt
+au BufRead,BufNewFile *.md set filetype=md
 
-" Set word wrapping and text width automatically in txt files
+" Set word wrapping and text width automatically in txt and markdown files
 autocmd Filetype txt setlocal textwidth=80 formatoptions=t1
+autocmd Filetype md setlocal textwidth=80 formatoptions=t1
 
 let g:zenburn_high_Contrast=1
 colors zenburn
