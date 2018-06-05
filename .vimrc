@@ -76,6 +76,9 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>el
 nnoremap <leader>) viw<esc>a)<esc>bi(<esc>el
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
 
+" Calls make to compile. If any errors, they are shown in the QuickFix Window
+nnoremap <leader>m :silent make!\|redraw!\|cw<CR>
+
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
 
