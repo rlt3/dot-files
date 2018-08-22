@@ -3,9 +3,7 @@ urxvt*depth: 32
 ! The background color can either be in this format:
 ! urxvt*background: rgba:0000/0000/0200/c800
 ! or use the typical hex format prepended with [%transparency]
-urxvt*background: [90]#000000
 ! font color
-urxvt*foreground: white
 urxvt*scrollBar: false
 urxvt*font: xft:Inconsolata:size=12:antialias=true:hinting=true
 ! get rid of extra spacing between letters/characters
@@ -14,3 +12,41 @@ urxvt*lineSpace: -1
 ! Remove border padding so text can take up full height/width of window
 urxvt*internalBorder: 0
 urxvt*externalBorder: 0
+
+! special
+*.foreground:   #90d7e5
+*.background:   [85]#370d2d
+*.cursorColor:  #76b0bb
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #ba6e88
+*.color9:       #ed0746
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
+

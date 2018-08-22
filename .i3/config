@@ -105,7 +105,7 @@ bindsym $mod+l exec "i3lock -c 000000 -e -i ~/Pictures/Lock.png"
 ### Auto start programs for ricing
 exec_always --no-startup-id $HOME/.i3/polybar_launch.sh
 exec --no-startup-id /usr/bin/compton --config ~/.compton.conf
-exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/Background.jpg
+exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/Background.png
 exec --no-startup-id /usr/bin/xautolock -time 10 -locker '/usr/bin/i3lock -c 000000 -e -i ~/Pictures/Lock.png' &
 
 ### Auto start programs for workspaces
