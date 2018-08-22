@@ -115,6 +115,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Anaconda2 installer
-export PATH="/home/leroy/anaconda2/bin:$PATH"
 export PATH=$PATH:.
