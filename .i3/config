@@ -102,12 +102,15 @@ bindsym $mod+n exec "urxvt -e wicd-curses"
 # Shortcut for locking the screen quickly
 bindsym $mod+l exec "i3lock -c 000000 -e -i ~/Pictures/Lock.png"
 
-### Auto start programs
+### Auto start programs for ricing
 exec_always --no-startup-id $HOME/.i3/polybar_launch.sh
 exec --no-startup-id /usr/bin/compton --config ~/.compton.conf
 exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/Background.jpg
-# Lock after 10 minutes
 exec --no-startup-id /usr/bin/xautolock -time 10 -locker '/usr/bin/i3lock -c 000000 -e -i ~/Pictures/Lock.png' &
+
+### Auto start programs for workspaces
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvt'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
 
 new_window normal
 for_window [class="^.*"] border pixel 1
