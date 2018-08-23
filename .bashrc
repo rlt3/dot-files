@@ -118,6 +118,6 @@ fi
 export PATH=$PATH:.
 setxkbmap -layout us -option ctrl:nocaps
 
-alias monitor-mirror='bash scripts/mirror-screen.sh'
-alias monitor-dual='bash scripts/dual-screen.sh'
-alias monitor-off='bash scripts/single-screen.sh'
+alias monitor-mirror='bash ~/scripts/mirror-screen.sh'
+alias monitor-dual='bash ~/scripts/dual-screen.sh'
+alias monitor-off='bash ~/scripts/single-screen.sh'
