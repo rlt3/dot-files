@@ -3,7 +3,7 @@
 # for examples
 
 export TERM='xterm-256color'
-export TERM='linux'
+export TERm='linux'
 
 # If not running interactively, don't do anything
 case $- in
@@ -116,3 +116,8 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:.
+setxkbmap -layout us -option ctrl:nocaps
+
+alias monitor-mirror='bash scripts/mirror-screen.sh'
+alias monitor-dual='bash scripts/dual-screen.sh'
+alias monitor-off='bash scripts/single-screen.sh'
