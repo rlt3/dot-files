@@ -28,13 +28,8 @@ primary = #ffb52a
 secondary = #e60053
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 34
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
-;fixed-center = false
+height = 27
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,12 +42,8 @@ cursor-scroll = ns-resize
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
-
 padding-left = 0
 padding-right = 2
-
 module-margin-left = 1
 module-margin-right = 2
 

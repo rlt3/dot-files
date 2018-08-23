@@ -6,7 +6,7 @@ Before=sleep.target
 User=leroy
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -e -c 000000 -i /home/leroy/Pictures/Lock.png
+ExecStart=/home/leroy/.i3/i3lock-multimonitor/lock
 
 [Install]
 WantedBy=sleep.target

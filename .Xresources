@@ -1,0 +1,3 @@
+URxvt.perl-ext-common: selection-to-clipboard,font-size
+URxvt.font-step:       10
+URxvt.keysym.C-0:      font-size:reset

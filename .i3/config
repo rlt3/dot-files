@@ -105,8 +105,9 @@ bindsym $mod+l exec "i3lock -c 000000 -e -i ~/Pictures/Lock.png"
 ### Auto start programs for ricing
 exec_always --no-startup-id $HOME/.i3/polybar_launch.sh
 exec --no-startup-id /usr/bin/compton --config ~/.compton.conf
-exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/Background.png
-exec --no-startup-id /usr/bin/xautolock -time 10 -locker '/usr/bin/i3lock -c 000000 -e -i ~/Pictures/Lock.png' &
+exec --no-startup-id /usr/bin/feh --bg-scale DISPLAY=:0.1 feh --bg-scale ~/Pictures/Background.png
+exec --no-startup-id /usr/bin/feh --bg-scale DISPLAY=:0.1 feh --bg-scale ~/Pictures/Background.png
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker '~/.i3/i3lock-multimonitor/lock' &
 
 ### Auto start programs for workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvt'
@@ -115,9 +116,9 @@ exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
 new_window normal
 for_window [class="^.*"] border pixel 1
 
-client.focused          #e8cb5a #e8cb5a #422c13 #484e50   #e8cb5a
-client.unfocused        #422c13 #422c13 #e8cb5a #2e9ef4   #422c13
-client.focused_inactive #422c13 #422c13 #e8cb5a #2e9ef4   #422c13
-client.urgent           #422c13 #422c13 #e8cb5a #2e9ef4   #422c13
-client.placeholder      #422c13 #422c13 #e8cb5a #2e9ef4   #422c13
+client.focused          #a3d8e2 #a3d8e2 #26001d #484e50   #a3d8e2
+client.unfocused        #26001d #26001d #a3d8e2 #484e50   #26001d
+client.focused_inactive #422c13 #422c13 #e8cb5a #2e9ef4   #a3d8e2
+client.urgent           #422c13 #422c13 #e8cb5a #2e9ef4   #a3d8e2
+client.placeholder      #422c13 #422c13 #e8cb5a #2e9ef4   #a3d8e2
 

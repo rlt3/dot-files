@@ -3,9 +3,6 @@ set nocompatible                 "  Give vim fully fledged features not compatib
 set encoding=utf8
 set ffs=unix,dos
 
-filetype plugin indent on
-
-let NERDTreeQuitOnOpen = 1
 let &t_Co=256
 
 syntax enable
@@ -81,9 +78,6 @@ nnoremap <leader>m :silent make!\|redraw!\|cw<CR>
 
 " Stop F1 from opening help because it is annoying
 noremap <F1> <Esc>
-
-" Open NERD Tree with F2
-"map <F2> :NERDTreeToggle<CR>
 
 " Wrap visual selection in an HTML tag.
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
