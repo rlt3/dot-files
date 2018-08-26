@@ -9,6 +9,7 @@ syntax enable
 filetype plugin indent on
 set modelines=5
 
+set clipboard=unnamed            "  Used to access system clipboard for X11
 set relativenumber               "  Shows relative line numbers
 set ruler                        "  Shows row, column
 set showcmd                      "  Show the command you're typing
