@@ -37,6 +37,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
+bindsym $mod+w layout toggle split
 bindsym $mod+e layout tabbed
 
 # switch to workspace
@@ -107,11 +108,12 @@ exec_always --no-startup-id $HOME/.i3/polybar_launch.sh
 exec --no-startup-id /usr/bin/compton --config ~/.compton.conf
 exec --no-startup-id /usr/bin/feh --bg-scale DISPLAY=:0.1 feh --bg-scale ~/Pictures/Background.png
 exec --no-startup-id /usr/bin/feh --bg-scale DISPLAY=:0.1 feh --bg-scale ~/Pictures/Background.png
-exec --no-startup-id /usr/bin/xautolock -time 10 -locker '~/.i3/i3lock-multimonitor/lock' &
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker '~/.i3/i3lock-multimonitor/lock'
 
 ### Auto start programs for workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvt'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 3; exec /snap/bin/spotify'
 
 new_window normal
 for_window [class="^.*"] border pixel 1
