@@ -15,7 +15,7 @@ urxvt*externalBorder: 0
 
 ! special
 *.foreground:   #90d7e5
-*.background:   [85]#370d2d
+*.background:   [85]#000000
 *.cursorColor:  #76b0bb
 
 ! black
